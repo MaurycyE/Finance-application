@@ -1,0 +1,259 @@
+# depslib dependency file v1.0
+1651937958 source:c:\users\medion\desktop\maurycy\informatyka\styczen 2022\finance application\finance application\main.cpp
+	<iostream>
+	"Markup.h"
+	"UserFile.h"
+	"UserMenager.h"
+	"FinancePlanningAplication.h"
+	"DateManager.h"
+	"IncomesManager.h"
+
+4293264394 c:\users\medion\desktop\maurycy\informatyka\styczen 2022\finance application\finance application\markup.h
+	<stdlib.h>
+	<string.h>
+	<string>
+	<afx.h>
+
+1651937958 c:\users\medion\desktop\maurycy\informatyka\styczen 2022\finance application\finance application\userfile.h
+	<iostream>
+	<vector>
+	<cstdlib>
+	"User.h"
+	"Markup.h"
+	"SupportMethods.h"
+
+1646595874 c:\users\medion\desktop\maurycy\informatyka\styczen 2022\finance application\finance application\user.h
+	<iostream>
+
+1649529466 c:\users\medion\desktop\maurycy\informatyka\styczen 2022\finance application\finance application\supportmethods.h
+	<iostream>
+	<sstream>
+
+1646595908 source:c:\users\medion\desktop\maurycy\informatyka\styczen 2022\finance application\finance application\user.cpp
+	"User.h"
+
+1651937994 source:c:\users\medion\desktop\maurycy\informatyka\styczen 2022\finance application\finance application\userfile.cpp
+	"UserFile.h"
+
+1649529466 source:c:\users\medion\desktop\maurycy\informatyka\styczen 2022\finance application\finance application\supportmethods.cpp
+	"SupportMethods.h"
+
+1650563028 source:c:\users\medion\desktop\maurycy\informatyka\styczen 2022\finance application\finance application\usermenager.cpp
+	"UserMenager.h"
+	<windows.h>
+
+1651937958 c:\users\medion\desktop\maurycy\informatyka\styczen 2022\finance application\finance application\usermenager.h
+	<iostream>
+	"User.h"
+	<vector>
+	"SupportMethods.h"
+	"UserFile.h"
+
+1651937958 source:c:\users\medion\desktop\maurycy\informatyka\styczen 2022\finance application\finance application\financeplanningaplication.cpp
+	"FinancePlanningAplication.h"
+
+1651937958 c:\users\medion\desktop\maurycy\informatyka\styczen 2022\finance application\finance application\financeplanningaplication.h
+	<iostream>
+	"UserMenager.h"
+	"User.h"
+	"IncomesManager.h"
+	"ExpansesManager.h"
+
+1647989620 source:c:\users\medion\desktop\maurycy\informatyka\styczen 2022\finance application\finance application\datesandfinances.cpp
+	"DatesAndFinances.h"
+
+1647989620 c:\users\medion\desktop\maurycy\informatyka\styczen 2022\finance application\finance application\datesandfinances.h
+	<iostream>
+
+1650316965 source:c:\users\medion\desktop\maurycy\informatyka\styczen 2022\finance application\finance application\expanses.cpp
+	"Expanses.h"
+
+1650317053 c:\users\medion\desktop\maurycy\informatyka\styczen 2022\finance application\finance application\expanses.h
+	<iostream>
+	"DatesAndFinances.h"
+
+1651937980 source:c:\users\medion\desktop\maurycy\informatyka\styczen 2022\finance application\finance application\expansesfile.cpp
+	"ExpansesFile.h"
+
+1651937958 c:\users\medion\desktop\maurycy\informatyka\styczen 2022\finance application\finance application\expansesfile.h
+	<iostream>
+	"Expanses.h"
+	<vector>
+	"Markup.h"
+	"SupportMethods.h"
+
+1651782356 source:c:\users\medion\desktop\maurycy\informatyka\styczen 2022\finance application\finance application\expansesmanager.cpp
+	"ExpansesManager.h"
+
+1651937958 c:\users\medion\desktop\maurycy\informatyka\styczen 2022\finance application\finance application\expansesmanager.h
+	<iostream>
+	<vector>
+	<algorithm>
+	<windows.h>
+	"Expanses.h"
+	"ExpansesFile.h"
+	"DateManager.h"
+
+1651937986 source:c:\users\medion\desktop\maurycy\informatyka\styczen 2022\finance application\finance application\incomesfiles.cpp
+	"IncomesFiles.h"
+
+1651937958 c:\users\medion\desktop\maurycy\informatyka\styczen 2022\finance application\finance application\incomesfiles.h
+	<iostream>
+	<vector>
+	"Incomes.h"
+	"Markup.h"
+	"SupportMethods.h"
+
+1648501956 source:c:\users\medion\desktop\maurycy\informatyka\styczen 2022\finance application\finance application\incomes.cpp
+	"Incomes.h"
+
+1648501956 c:\users\medion\desktop\maurycy\informatyka\styczen 2022\finance application\finance application\incomes.h
+	<iostream>
+	"DatesAndFinances.h"
+
+1651783477 source:c:\users\medion\desktop\maurycy\informatyka\styczen 2022\finance application\finance application\incomesmanager.cpp
+	"IncomesManager.h"
+
+1651937958 c:\users\medion\desktop\maurycy\informatyka\styczen 2022\finance application\finance application\incomesmanager.h
+	<iostream>
+	<vector>
+	<algorithm>
+	<windows.h>
+	"Incomes.h"
+	"DateManager.h"
+	"IncomesFiles.h"
+
+1650563028 source:c:\users\medion\desktop\maurycy\informatyka\styczen 2022\finance application\finance application\datemanager.cpp
+	"DateManager.h"
+
+1650563028 c:\users\medion\desktop\maurycy\informatyka\styczen 2022\finance application\finance application\datemanager.h
+	<iostream>
+	<time.h>
+	"DatesAndFinances.h"
+	"SupportMethods.h"
+
+1650203092 source:c:\users\maurycy\desktop\informatyka\styczen 2022\finance application\finance application\datemanager.cpp
+	"DateManager.h"
+
+1649183762 c:\users\maurycy\desktop\informatyka\styczen 2022\finance application\finance application\datemanager.h
+	<iostream>
+	<time.h>
+	"DatesAndFinances.h"
+	"SupportMethods.h"
+
+1647989620 c:\users\maurycy\desktop\informatyka\styczen 2022\finance application\finance application\datesandfinances.h
+	<iostream>
+
+1649529466 c:\users\maurycy\desktop\informatyka\styczen 2022\finance application\finance application\supportmethods.h
+	<iostream>
+	<sstream>
+
+1647989620 source:c:\users\maurycy\desktop\informatyka\styczen 2022\finance application\finance application\datesandfinances.cpp
+	"DatesAndFinances.h"
+
+1647373700 source:c:\users\maurycy\desktop\informatyka\styczen 2022\finance application\finance application\expanses.cpp
+	"Expanses.h"
+
+1647373754 c:\users\maurycy\desktop\informatyka\styczen 2022\finance application\finance application\expanses.h
+	<iostream>
+	"DatesAndFinances.h"
+
+1647368706 source:c:\users\maurycy\desktop\informatyka\styczen 2022\finance application\finance application\expansesfile.cpp
+	"ExpansesFile.h"
+
+1647368744 c:\users\maurycy\desktop\informatyka\styczen 2022\finance application\finance application\expansesfile.h
+	<iostream>
+	"Expanses.h"
+
+1647368798 source:c:\users\maurycy\desktop\informatyka\styczen 2022\finance application\finance application\expansesmanager.cpp
+	"ExpansesManager.h"
+
+1647373700 c:\users\maurycy\desktop\informatyka\styczen 2022\finance application\finance application\expansesmanager.h
+	<iostream>
+	"Expanses.h"
+	"ExpansesFile.h"
+
+1650205250 source:c:\users\maurycy\desktop\informatyka\styczen 2022\finance application\finance application\financeplanningaplication.cpp
+	"FinancePlanningAplication.h"
+
+1650197121 c:\users\maurycy\desktop\informatyka\styczen 2022\finance application\finance application\financeplanningaplication.h
+	<iostream>
+	"UserMenager.h"
+	"User.h"
+	"IncomesManager.h"
+
+1650198301 c:\users\maurycy\desktop\informatyka\styczen 2022\finance application\finance application\usermenager.h
+	<iostream>
+	"User.h"
+	<vector>
+	"SupportMethods.h"
+	"UserFile.h"
+
+1646595874 c:\users\maurycy\desktop\informatyka\styczen 2022\finance application\finance application\user.h
+	<iostream>
+
+1646868554 c:\users\maurycy\desktop\informatyka\styczen 2022\finance application\finance application\userfile.h
+	<iostream>
+	<vector>
+	<cstdlib>
+	"User.h"
+	"Markup.h"
+	"SupportMethods.h"
+
+4293264394 c:\users\maurycy\desktop\informatyka\styczen 2022\finance application\finance application\markup.h
+	<stdlib.h>
+	<string.h>
+	<string>
+	<afx.h>
+
+1650205250 c:\users\maurycy\desktop\informatyka\styczen 2022\finance application\finance application\incomesmanager.h
+	<iostream>
+	<vector>
+	<algorithm>
+	<windows.h>
+	"Incomes.h"
+	"DateManager.h"
+	"IncomesFiles.h"
+
+1648501956 c:\users\maurycy\desktop\informatyka\styczen 2022\finance application\finance application\incomes.h
+	<iostream>
+	"DatesAndFinances.h"
+
+1650206957 c:\users\maurycy\desktop\informatyka\styczen 2022\finance application\finance application\incomesfiles.h
+	<iostream>
+	<vector>
+	"Incomes.h"
+	"Markup.h"
+	"SupportMethods.h"
+
+1648501956 source:c:\users\maurycy\desktop\informatyka\styczen 2022\finance application\finance application\incomes.cpp
+	"Incomes.h"
+
+1650195910 source:c:\users\maurycy\desktop\informatyka\styczen 2022\finance application\finance application\incomesfiles.cpp
+	"IncomesFiles.h"
+
+1650205553 source:c:\users\maurycy\desktop\informatyka\styczen 2022\finance application\finance application\incomesmanager.cpp
+	"IncomesManager.h"
+
+1649604494 source:c:\users\maurycy\desktop\informatyka\styczen 2022\finance application\finance application\main.cpp
+	<iostream>
+	"Markup.h"
+	"UserFile.h"
+	"UserMenager.h"
+	"FinancePlanningAplication.h"
+	"DateManager.h"
+	"IncomesManager.h"
+
+1649529466 source:c:\users\maurycy\desktop\informatyka\styczen 2022\finance application\finance application\supportmethods.cpp
+	"SupportMethods.h"
+
+1646595908 source:c:\users\maurycy\desktop\informatyka\styczen 2022\finance application\finance application\user.cpp
+	"User.h"
+
+1650195814 source:c:\users\maurycy\desktop\informatyka\styczen 2022\finance application\finance application\userfile.cpp
+	"UserFile.h"
+
+1650198301 source:c:\users\maurycy\desktop\informatyka\styczen 2022\finance application\finance application\usermenager.cpp
+	"UserMenager.h"
+	<windows.h>
+
