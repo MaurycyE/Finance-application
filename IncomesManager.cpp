@@ -26,17 +26,18 @@ void IncomesManager::addIncome() {
         string userDate="";
         DateManager checkUserDate;
         bool validationCheck;
+        cout<<"Enter date in format rrrr-mm-dd and from 2000-01-01 to last day of current month period: "<<endl;
         do {
 
-            cout<<"Enter date in format rrrr-mm-dd and from 01-01-2000 to last day of current month period: "<<endl;
+            //cout<<"Enter date in format rrrr-mm-dd and from 2000-01-01 to last day of current month period: "<<endl;
             userDate="";
             userDate=SupportMethods::loadTextLine();
             validationCheck = checkUserDate.isGivenDateVaild(userDate);
 
-            if (validationCheck==false)
+            if (!validationCheck)
                 cout<<"Wrong date. Please use format rrrr-mm-dd"<<endl;
 
-            if (validationCheck==true) {
+            if (validationCheck) {
 
                 DateManager gateFullDate;
                 DatesAndFinances dateToSave;
@@ -46,7 +47,7 @@ void IncomesManager::addIncome() {
 
             }
 
-        } while (validationCheck==false);
+        } while (!validationCheck);
 
     }
 
