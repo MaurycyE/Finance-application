@@ -48,16 +48,25 @@ vector<Incomes> IncomesFiles::loadLoggedUserIncomes(vector<Incomes> incomes, int
 
     while (xml.FindElem("INCOME")) {
 
-        xml.FindChildElem("USER_ID");
-        if (SupportMethods::conversionStringToInt(xml.GetChildData())==loggedUserId) {
-
             Incomes actualRecord;
 
-            actualRecord.userIdSetter(SupportMethods::conversionStringToInt(xml.GetChildData()));
+        xml.FindChildElem("USER_ID");
+        actualRecord.userIdSetter(SupportMethods::conversionStringToInt(xml.GetChildData()));
 
-            xml.FindChildElem("INCOME_ID");
+
+        xml.FindChildElem("INCOME_ID");
             actualRecord.incomeIDsetter(SupportMethods::conversionStringToInt(xml.GetChildData()));
             lasIncomeIDSetter(SupportMethods::conversionStringToInt(xml.GetChildData()));
+
+        if (SupportMethods::conversionStringToInt(xml.GetChildData())==loggedUserId) {
+
+            //Incomes actualRecord;
+
+            //actualRecord.userIdSetter(SupportMethods::conversionStringToInt(xml.GetChildData()));
+
+            //xml.FindChildElem("INCOME_ID");
+            //actualRecord.incomeIDsetter(SupportMethods::conversionStringToInt(xml.GetChildData()));
+            //lasIncomeIDSetter(SupportMethods::conversionStringToInt(xml.GetChildData()));
 
             xml.FindChildElem("INCOME_AMOUT");
             actualRecord.incomeAmoutSetter(SupportMethods::conversionStringToFloat(xml.GetChildData()));

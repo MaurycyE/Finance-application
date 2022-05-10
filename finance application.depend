@@ -380,3 +380,10 @@
 1652046421 source:c:\users\medion\desktop\maurycy\informatyka\styczen 2022\finance application\finance application\finance-application\userfile.cpp
 	"UserFile.h"
 
+1652213651 source:c:\users\medion\desktop\maurycy\informatyka\styczen 2022\finance application\finance application\finance-application\expansesmanager.cpp
+	"ExpansesManager.h"
+
+1652213651 source:c:\users\medion\desktop\maurycy\informatyka\styczen 2022\finance application\finance application\finance-application\usermenager.cpp
+	"UserMenager.h"
+	<windows.h>
+

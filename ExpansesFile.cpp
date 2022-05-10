@@ -45,16 +45,23 @@ vector<Expanses> ExpansesFile::loadLoggedUserExpanses(vector<Expanses> expanses,
     xml.Load(USER_FILE_NAME);
 
     while (xml.FindElem("EXPANSE")) {
+            Expanses actualRecord;
+    actualRecord.userIdSetter(SupportMethods::conversionStringToInt(xml.GetChildData()));
+
+    xml.FindChildElem("EXPANSE_ID");
+            actualRecord.expanseIDsetter(SupportMethods::conversionStringToInt(xml.GetChildData()));
+            lastExpansesIDSetter(SupportMethods::conversionStringToInt(xml.GetChildData()));
+
 
         xml.FindChildElem("USER_ID");
         if (SupportMethods::conversionStringToInt(xml.GetChildData())==loggedUserId) {
 
-            Expanses actualRecord;
-            actualRecord.userIdSetter(SupportMethods::conversionStringToInt(xml.GetChildData()));
+           // Expanses actualRecord;
+            //actualRecord.userIdSetter(SupportMethods::conversionStringToInt(xml.GetChildData()));
 
-            xml.FindChildElem("EXPANSE_ID");
-            actualRecord.expanseIDsetter(SupportMethods::conversionStringToInt(xml.GetChildData()));
-            lastExpansesIDSetter(SupportMethods::conversionStringToInt(xml.GetChildData()));
+            //xml.FindChildElem("EXPANSE_ID");
+           // actualRecord.expanseIDsetter(SupportMethods::conversionStringToInt(xml.GetChildData()));
+           // lastExpansesIDSetter(SupportMethods::conversionStringToInt(xml.GetChildData()));
 
             xml.FindChildElem("EXPANSE_AMOUT");
             actualRecord.expanseAmoutSetter(SupportMethods::conversionStringToFloat(xml.GetChildData()));
