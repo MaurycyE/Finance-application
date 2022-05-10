@@ -29,7 +29,7 @@ User UserMenager::passNewUserData() {
         cin>>login;
         user.userLoginSetter(login);
 
-    } while (isLoginExist(user.userLoginGetter()) == true);
+    } while (isLoginExist(user.userLoginGetter()));
 
     string password;
     cout << "Type in password: ";
@@ -51,7 +51,7 @@ User UserMenager::passNewUserData() {
 
 int UserMenager::getNewUserId() {
 
-    if (users.empty() == true)
+    if (users.empty())
         return 1;
     else
         return users.back().userIdGetter() + 1;

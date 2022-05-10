@@ -85,7 +85,7 @@ void ExpansesManager::loadExpanseRecords () {
 
 int ExpansesManager::loadLastExpanseId () {
 
-    if (expanses.empty()==true)
+    if (expanses.empty())
         lastExpanseID=0;
 
     else {
