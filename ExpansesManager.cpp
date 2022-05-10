@@ -70,12 +70,8 @@ void ExpansesManager::addExpanse() {
     lastExpanseIdSetter(lastExpanseID+1);
 
     cout<<endl;
-    cout<<"Following expanse has been added to the file:"<<endl<<endl;
-    cout<<actualRecord.fullDateGetter()<<endl;
-    cout<<actualRecord.expanseAmoutGetter()<<endl;
-    cout<<actualRecord.descriptionGetter()<<endl;
-    cout<<actualRecord.expanseIDgetter()<<endl;
-    cout<<actualRecord.userIdGetter()<<endl;
+    cout<<"Expanse has been added to the file. Press enter to continue."<<endl<<endl;
+
     getchar();
 
 }

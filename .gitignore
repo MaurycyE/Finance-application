@@ -32,3 +32,6 @@
 *.app
 
 *.xml
+*.depend
+*.layout
+*.cbp

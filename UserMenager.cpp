@@ -13,7 +13,7 @@ void UserMenager::userRegistration () {
     users.push_back(user);
     userFile.addUserToTheFile(user);
 
-    cout << endl << "Konto zalozono pomyslnie" << endl << endl;
+    cout << endl << "The account has been created successfully" << endl << endl;
     system("pause");
 
 }

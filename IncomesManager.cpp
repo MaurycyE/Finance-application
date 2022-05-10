@@ -69,12 +69,8 @@ void IncomesManager::addIncome() {
     lastIncomeIdSetter(lastIncomeID+1);
 
     cout<<endl;
-    cout<<"Following income has been added to the file:"<<endl<<endl;
-    cout<<actualRecord.fullDateGetter()<<endl;
-    cout<<actualRecord.incomeAmoutGetter()<<endl;
-    cout<<actualRecord.descriptionGetter()<<endl;
-    cout<<actualRecord.incomeIDgetter()<<endl;
-    cout<<actualRecord.userIdGetter()<<endl;
+    cout<<"Income has been added to the file, press enter to continue."<<endl;
+
     getchar();
 
 }
