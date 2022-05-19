@@ -19,6 +19,7 @@ void IncomesManager::addIncome() {
     }
     if (userAnswer=='y') {
         DateManager giveActualDate;
+        //actualRecord.fullDateSetter(giveActualDate.giveActualDate('1'));
         actualRecord.fullDateSetter(SupportMethods::conversionStringToInt(giveActualDate.giveActualDate('2')));
     }
 

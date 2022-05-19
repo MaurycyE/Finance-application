@@ -266,7 +266,7 @@
 	"DatesAndFinances.h"
 	"SupportMethods.h"
 
-1652046421 c:\users\medion\desktop\maurycy\informatyka\styczen 2022\finance application\finance application\finance-application\datesandfinances.h
+1652886981 c:\users\medion\desktop\maurycy\informatyka\styczen 2022\finance application\finance application\finance-application\datesandfinances.h
 	<iostream>
 
 1652046421 c:\users\medion\desktop\maurycy\informatyka\styczen 2022\finance application\finance application\finance-application\supportmethods.h
@@ -283,7 +283,7 @@
 	<iostream>
 	"DatesAndFinances.h"
 
-1652046421 source:c:\users\medion\desktop\maurycy\informatyka\styczen 2022\finance application\finance application\finance-application\expansesfile.cpp
+1652887548 source:c:\users\medion\desktop\maurycy\informatyka\styczen 2022\finance application\finance application\finance-application\expansesfile.cpp
 	"ExpansesFile.h"
 
 1652046421 c:\users\medion\desktop\maurycy\informatyka\styczen 2022\finance application\finance application\finance-application\expansesfile.h
@@ -340,12 +340,14 @@
 	<iostream>
 	"DatesAndFinances.h"
 
-1652046421 c:\users\medion\desktop\maurycy\informatyka\styczen 2022\finance application\finance application\finance-application\incomesfiles.h
+1652983904 c:\users\medion\desktop\maurycy\informatyka\styczen 2022\finance application\finance application\finance-application\incomesfiles.h
 	<iostream>
 	<vector>
 	"Incomes.h"
 	"Markup.h"
 	"SupportMethods.h"
+	"DateManager.h"
+	"IncomesFiles.h"
 
 1652046421 c:\users\medion\desktop\maurycy\informatyka\styczen 2022\finance application\finance application\finance-application\expansesmanager.h
 	<iostream>
@@ -359,7 +361,7 @@
 1652046421 source:c:\users\medion\desktop\maurycy\informatyka\styczen 2022\finance application\finance application\finance-application\incomes.cpp
 	"Incomes.h"
 
-1652046421 source:c:\users\medion\desktop\maurycy\informatyka\styczen 2022\finance application\finance application\finance-application\incomesfiles.cpp
+1652984881 source:c:\users\medion\desktop\maurycy\informatyka\styczen 2022\finance application\finance application\finance-application\incomesfiles.cpp
 	"IncomesFiles.h"
 
 1652046421 source:c:\users\medion\desktop\maurycy\informatyka\styczen 2022\finance application\finance application\finance-application\main.cpp
@@ -386,4 +388,7 @@
 1652213651 source:c:\users\medion\desktop\maurycy\informatyka\styczen 2022\finance application\finance application\finance-application\usermenager.cpp
 	"UserMenager.h"
 	<windows.h>
+
+1652886640 source:c:\users\medion\desktop\maurycy\informatyka\styczen 2022\finance application\finance application\finance-application\incomesmanager.cpp
+	"IncomesManager.h"
 

@@ -10,7 +10,7 @@ void ExpansesFile::addExpansesToTheFile (Expanses actualRecord) {
     xml.AddElem("USER_ID", actualRecord.userIdGetter());
     xml.AddElem("EXPANSE_ID", actualRecord.expanseIDgetter());
     xml.AddElem("EXPANSE_AMOUT", SupportMethods::conversionFloatToString(actualRecord.expanseAmoutGetter()));
-    xml.AddElem("DATE", actualRecord.fullDateGetter());
+    xml.AddElem("DATE", displayDateWithSeparationSign(actualRecord.fullDateGetter()));
     xml.AddElem("DESCRIPTION", actualRecord.descriptionGetter());
 
     xml.Save(USER_FILE_NAME);

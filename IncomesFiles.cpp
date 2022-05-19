@@ -11,7 +11,7 @@ void IncomesFiles::addIncomesToTheFile (Incomes actualRecord) {
     xml.AddElem("USER_ID", actualRecord.userIdGetter());
     xml.AddElem("INCOME_ID", actualRecord.incomeIDgetter());
     xml.AddElem("INCOME_AMOUT", SupportMethods::conversionFloatToString(actualRecord.incomeAmoutGetter()));
-    xml.AddElem("DATE", actualRecord.fullDateGetter());
+    xml.AddElem("DATE", addDateToFileWithSeparationSign(actualRecord.fullDateGetter()));
     xml.AddElem("DESCRIPTION", actualRecord.descriptionGetter());
 
     xml.Save(USER_FILE_NAME);
@@ -43,6 +43,7 @@ string IncomesFiles::addDateToFileWithSeparationSign (int dateWithoutSeparationS
 
 vector<Incomes> IncomesFiles::loadLoggedUserIncomes(vector<Incomes> incomes, int loggedUserId) {
 
+
     CMarkup xml;
     xml.Load(USER_FILE_NAME);
 
@@ -72,7 +73,18 @@ vector<Incomes> IncomesFiles::loadLoggedUserIncomes(vector<Incomes> incomes, int
             actualRecord.incomeAmoutSetter(SupportMethods::conversionStringToFloat(xml.GetChildData()));
 
             xml.FindChildElem("DATE");
+
+//            DateManager gateFullDate;
+//                DatesAndFinances dateToSave;
+//                dateToSave=gateFullDate.obtainYearMonthAndDayFromFullDate(xml.GetChildData());
+//
+//                actualRecord.fullDateSetter(dateToSave.fullDateGetter());
+
+
             actualRecord.fullDateSetter(SupportMethods::conversionStringToInt(xml.GetChildData()));
+
+            cout<<actualRecord.fullDateGetter()<<endl;
+                getchar();
 
             xml.FindChildElem("DESCRIPTION");
             actualRecord.descriptionSetter(xml.GetChildData());

@@ -5,6 +5,8 @@
 #include "Incomes.h"
 #include "Markup.h"
 #include "SupportMethods.h"
+#include "DateManager.h"
+#include "IncomesFiles.h"
 
 using namespace std;
 
