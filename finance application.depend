@@ -283,7 +283,7 @@
 	<iostream>
 	"DatesAndFinances.h"
 
-1652887548 source:c:\users\medion\desktop\maurycy\informatyka\styczen 2022\finance application\finance application\finance-application\expansesfile.cpp
+1652994159 source:c:\users\medion\desktop\maurycy\informatyka\styczen 2022\finance application\finance application\finance-application\expansesfile.cpp
 	"ExpansesFile.h"
 
 1652046421 c:\users\medion\desktop\maurycy\informatyka\styczen 2022\finance application\finance application\finance-application\expansesfile.h
@@ -340,7 +340,7 @@
 	<iostream>
 	"DatesAndFinances.h"
 
-1652983904 c:\users\medion\desktop\maurycy\informatyka\styczen 2022\finance application\finance application\finance-application\incomesfiles.h
+1653408904 c:\users\medion\desktop\maurycy\informatyka\styczen 2022\finance application\finance application\finance-application\incomesfiles.h
 	<iostream>
 	<vector>
 	"Incomes.h"
@@ -361,7 +361,7 @@
 1652046421 source:c:\users\medion\desktop\maurycy\informatyka\styczen 2022\finance application\finance application\finance-application\incomes.cpp
 	"Incomes.h"
 
-1652984881 source:c:\users\medion\desktop\maurycy\informatyka\styczen 2022\finance application\finance application\finance-application\incomesfiles.cpp
+1652994463 source:c:\users\medion\desktop\maurycy\informatyka\styczen 2022\finance application\finance application\finance-application\incomesfiles.cpp
 	"IncomesFiles.h"
 
 1652046421 source:c:\users\medion\desktop\maurycy\informatyka\styczen 2022\finance application\finance application\finance-application\main.cpp

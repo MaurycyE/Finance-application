@@ -6,10 +6,20 @@ void IncomesFiles::addIncomesToTheFile (Incomes actualRecord) {
 
     xml.Load(USER_FILE_NAME);
 
+    if (!xml.IsWellFormed()) {
+
+        xml.AddElem("INCOMES");
+        xml.Save(USER_FILE_NAME);
+
+    }
+
+    xml.FindElem("INCOMES");
+    xml.IntoElem();
     xml.AddElem("INCOME");
     xml.IntoElem();
-    xml.AddElem("USER_ID", actualRecord.userIdGetter());
     xml.AddElem("INCOME_ID", actualRecord.incomeIDgetter());
+    xml.AddElem("USER_ID", actualRecord.userIdGetter());
+    //xml.AddElem("INCOME_ID", actualRecord.incomeIDgetter());
     xml.AddElem("INCOME_AMOUT", SupportMethods::conversionFloatToString(actualRecord.incomeAmoutGetter()));
     xml.AddElem("DATE", addDateToFileWithSeparationSign(actualRecord.fullDateGetter()));
     xml.AddElem("DESCRIPTION", actualRecord.descriptionGetter());
@@ -45,20 +55,21 @@ vector<Incomes> IncomesFiles::loadLoggedUserIncomes(vector<Incomes> incomes, int
 
 
     CMarkup xml;
+    //cout<<xml.IsWellFormed()<<endl;
+    //getchar();
     xml.Load(USER_FILE_NAME);
 
     while (xml.FindElem("INCOME")) {
 
             Incomes actualRecord;
 
-        xml.FindChildElem("USER_ID");
-        actualRecord.userIdSetter(SupportMethods::conversionStringToInt(xml.GetChildData()));
 
 
         xml.FindChildElem("INCOME_ID");
             actualRecord.incomeIDsetter(SupportMethods::conversionStringToInt(xml.GetChildData()));
             lasIncomeIDSetter(SupportMethods::conversionStringToInt(xml.GetChildData()));
 
+            xml.FindChildElem("USER_ID");
         if (SupportMethods::conversionStringToInt(xml.GetChildData())==loggedUserId) {
 
             //Incomes actualRecord;
@@ -68,6 +79,11 @@ vector<Incomes> IncomesFiles::loadLoggedUserIncomes(vector<Incomes> incomes, int
             //xml.FindChildElem("INCOME_ID");
             //actualRecord.incomeIDsetter(SupportMethods::conversionStringToInt(xml.GetChildData()));
             //lasIncomeIDSetter(SupportMethods::conversionStringToInt(xml.GetChildData()));
+
+                    //xml.FindChildElem("USER_ID");
+        actualRecord.userIdSetter(SupportMethods::conversionStringToInt(xml.GetChildData()));
+
+
 
             xml.FindChildElem("INCOME_AMOUT");
             actualRecord.incomeAmoutSetter(SupportMethods::conversionStringToFloat(xml.GetChildData()));
@@ -105,4 +121,17 @@ void IncomesFiles::lasIncomeIDSetter(int incomeIDtoSet) {
 int IncomesFiles::lastIncomeIDgetter() {
 
     return lastIncomeID;
+}
+
+bool IncomesFiles::isIncomeFileEmpty () {
+
+    CMarkup xml;
+    xml.Load(USER_FILE_NAME);
+
+    if (xml.FindElem("INCOME"))
+        return true;
+
+        else
+            return false;
+
 }

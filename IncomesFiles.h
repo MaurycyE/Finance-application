@@ -21,10 +21,12 @@ public:
     int lastIncomeIDgetter();
     string addDateToFileWithSeparationSign (int dateWithoutSeparationSigns);
 
+
 private:
     int lastIncomeID;
     const string USER_FILE_NAME;
     int getLastIncomeId();
+    bool isIncomeFileEmpty ();
 
 };
 
