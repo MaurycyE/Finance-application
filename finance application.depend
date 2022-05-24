@@ -340,7 +340,7 @@
 	<iostream>
 	"DatesAndFinances.h"
 
-1653408904 c:\users\medion\desktop\maurycy\informatyka\styczen 2022\finance application\finance application\finance-application\incomesfiles.h
+1653411909 c:\users\medion\desktop\maurycy\informatyka\styczen 2022\finance application\finance application\finance-application\incomesfiles.h
 	<iostream>
 	<vector>
 	"Incomes.h"
@@ -361,7 +361,7 @@
 1652046421 source:c:\users\medion\desktop\maurycy\informatyka\styczen 2022\finance application\finance application\finance-application\incomes.cpp
 	"Incomes.h"
 
-1652994463 source:c:\users\medion\desktop\maurycy\informatyka\styczen 2022\finance application\finance application\finance-application\incomesfiles.cpp
+1653419243 source:c:\users\medion\desktop\maurycy\informatyka\styczen 2022\finance application\finance application\finance-application\incomesfiles.cpp
 	"IncomesFiles.h"
 
 1652046421 source:c:\users\medion\desktop\maurycy\informatyka\styczen 2022\finance application\finance application\finance-application\main.cpp
@@ -389,6 +389,6 @@
 	"UserMenager.h"
 	<windows.h>
 
-1652886640 source:c:\users\medion\desktop\maurycy\informatyka\styczen 2022\finance application\finance application\finance-application\incomesmanager.cpp
+1653409603 source:c:\users\medion\desktop\maurycy\informatyka\styczen 2022\finance application\finance application\finance-application\incomesmanager.cpp
 	"IncomesManager.h"
 

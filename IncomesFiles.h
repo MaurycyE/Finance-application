@@ -7,6 +7,7 @@
 #include "SupportMethods.h"
 #include "DateManager.h"
 #include "IncomesFiles.h"
+//#include <cstdlib>
 
 using namespace std;
 
@@ -20,13 +21,13 @@ public:
     void lasIncomeIDSetter(int incomeIDtoSet);
     int lastIncomeIDgetter();
     string addDateToFileWithSeparationSign (int dateWithoutSeparationSigns);
-
+    bool isIncomeFileEmpty ();
 
 private:
     int lastIncomeID;
     const string USER_FILE_NAME;
     int getLastIncomeId();
-    bool isIncomeFileEmpty ();
+
 
 };
 

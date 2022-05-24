@@ -84,7 +84,8 @@ void IncomesManager::loadIncomeRecords () {
 
 int IncomesManager::loadLastIncomeId () {
 
-    if (incomes.empty())
+    //if (incomes.empty())
+        if (!incomesFile.isIncomeFileEmpty())
         lastIncomeID=0;
 
     else {

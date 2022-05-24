@@ -53,21 +53,29 @@ string IncomesFiles::addDateToFileWithSeparationSign (int dateWithoutSeparationS
 
 vector<Incomes> IncomesFiles::loadLoggedUserIncomes(vector<Incomes> incomes, int loggedUserId) {
 
-
     CMarkup xml;
     //cout<<xml.IsWellFormed()<<endl;
     //getchar();
     xml.Load(USER_FILE_NAME);
 
-    while (xml.FindElem("INCOME")) {
+    //cout<<isIncomeFileEmpty()<<endl;
+   //getchar();
+
+    while (xml.FindChildElem("INCOME")) {
 
             Incomes actualRecord;
 
-
+        xml.IntoElem();
 
         xml.FindChildElem("INCOME_ID");
             actualRecord.incomeIDsetter(SupportMethods::conversionStringToInt(xml.GetChildData()));
-            lasIncomeIDSetter(SupportMethods::conversionStringToInt(xml.GetChildData()));
+            //lasIncomeIDSetter(SupportMethods::conversionStringToInt(xml.GetChildData()));
+            lasIncomeIDSetter(actualRecord.incomeIDgetter());
+           // cout<<lastIncomeIDgetter()<<endl;
+
+            //getchar();
+
+            //system("pause");
 
             xml.FindChildElem("USER_ID");
         if (SupportMethods::conversionStringToInt(xml.GetChildData())==loggedUserId) {
@@ -95,19 +103,25 @@ vector<Incomes> IncomesFiles::loadLoggedUserIncomes(vector<Incomes> incomes, int
 //                dateToSave=gateFullDate.obtainYearMonthAndDayFromFullDate(xml.GetChildData());
 //
 //                actualRecord.fullDateSetter(dateToSave.fullDateGetter());
+            DateManager gateFullDate;
+                DatesAndFinances dateToSave;
+                dateToSave=gateFullDate.obtainYearMonthAndDayFromFullDate(xml.GetChildData());
+                actualRecord.fullDateSetter(dateToSave.fullDateGetter());
+
+            //actualRecord.fullDateSetter(SupportMethods::conversionStringToInt(xml.GetChildData()));
 
 
-            actualRecord.fullDateSetter(SupportMethods::conversionStringToInt(xml.GetChildData()));
 
-            cout<<actualRecord.fullDateGetter()<<endl;
-                getchar();
+           // cout<<actualRecord.fullDateGetter()<<endl;
+          //      getchar();
 
             xml.FindChildElem("DESCRIPTION");
             actualRecord.descriptionSetter(xml.GetChildData());
 
             incomes.push_back(actualRecord);
-        }
 
+        }
+        xml.OutOfElem();
     }
 
     return incomes;
@@ -128,8 +142,11 @@ bool IncomesFiles::isIncomeFileEmpty () {
     CMarkup xml;
     xml.Load(USER_FILE_NAME);
 
-    if (xml.FindElem("INCOME"))
+    if (xml.FindElem("INCOMES")&&(xml.FindChildElem("INCOME"))){
+
+    //xml.FindElem("INCOME");
         return true;
+    }
 
         else
             return false;
