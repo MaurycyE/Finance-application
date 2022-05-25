@@ -5,6 +5,14 @@ void ExpansesFile::addExpansesToTheFile (Expanses actualRecord) {
     CMarkup xml;
     xml.Load(USER_FILE_NAME);
 
+      if (!xml.IsWellFormed()) {
+
+        xml.AddElem("EXPANSES");
+        xml.Save(USER_FILE_NAME);
+
+    }
+xml.FindElem("EXPANSES");
+    xml.IntoElem();
     xml.AddElem("EXPANSE");
     xml.IntoElem();
     xml.AddElem("EXPANSE_ID", actualRecord.expanseIDgetter());
@@ -45,19 +53,20 @@ vector<Expanses> ExpansesFile::loadLoggedUserExpanses(vector<Expanses> expanses,
     CMarkup xml;
     xml.Load(USER_FILE_NAME);
 
-    while (xml.FindElem("EXPANSE")) {
+    while (xml.FindChildElem("EXPANSE")) {
             Expanses actualRecord;
+            xml.IntoElem();
     //actualRecord.userIdSetter(SupportMethods::conversionStringToInt(xml.GetChildData()));
 
     xml.FindChildElem("EXPANSE_ID");
             actualRecord.expanseIDsetter(SupportMethods::conversionStringToInt(xml.GetChildData()));
-            lastExpansesIDSetter(SupportMethods::conversionStringToInt(xml.GetChildData()));
+            lastExpansesIDSetter(actualRecord.expanseIDgetter());
 
-
-      //  xml.FindChildElem("USER_ID");
-        if (SupportMethods::conversionStringToInt(xml.GetChildData())==loggedUserId) {
 
         xml.FindChildElem("USER_ID");
+        if (SupportMethods::conversionStringToInt(xml.GetChildData())==loggedUserId) {
+
+        //xml.FindChildElem("USER_ID");
          actualRecord.userIdSetter(SupportMethods::conversionStringToInt(xml.GetChildData()));
 
            // Expanses actualRecord;
@@ -71,14 +80,19 @@ vector<Expanses> ExpansesFile::loadLoggedUserExpanses(vector<Expanses> expanses,
             actualRecord.expanseAmoutSetter(SupportMethods::conversionStringToFloat(xml.GetChildData()));
 
             xml.FindChildElem("DATE");
-            actualRecord.fullDateSetter(SupportMethods::conversionStringToInt(xml.GetChildData()));
+            //actualRecord.fullDateSetter(SupportMethods::conversionStringToInt(xml.GetChildData()));
+            DateManager gateFullDate;
+                DatesAndFinances dateToSave;
+                dateToSave=gateFullDate.obtainYearMonthAndDayFromFullDate(xml.GetChildData());
+                actualRecord.fullDateSetter(dateToSave.fullDateGetter());
+
 
             xml.FindChildElem("DESCRIPTION");
             actualRecord.descriptionSetter(xml.GetChildData());
 
             expanses.push_back(actualRecord);
         }
-
+        xml.OutOfElem();
     }
 
     return expanses;
@@ -93,4 +107,20 @@ void ExpansesFile::lastExpansesIDSetter(int expanseIDtoSet) {
 int ExpansesFile::lastExpansesIDgetter() {
 
     return lastExpansesID;
+}
+
+bool ExpansesFile::isExpanseFileEmpty () {
+
+    CMarkup xml;
+    xml.Load(USER_FILE_NAME);
+
+    if (xml.FindElem("EXPANSES")&&(xml.FindChildElem("EXPANSE"))){
+
+    //xml.FindElem("INCOME");
+        return true;
+    }
+
+        else
+            return false;
+
 }

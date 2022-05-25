@@ -24,8 +24,8 @@ char FinancePlanningAplication::selectOptionFromUserMenu() {
     string lastName = userMenager.loggedUserLastNameGetter();
 
     system("cls");
-    cout << " >>> USER MENU <<<  Logged as: "<<firstName<<" "<<lastName<< endl;
-    cout << "---------------------------" << endl;
+    cout << " >>> USER MENU <<<                        Logged as: "<<firstName<<" "<<lastName<< endl;
+    cout << "---------------------------               ---------------------------" << endl;
     cout << "1. Add Income" << endl;
     cout << "2. Add Expense" << endl;
     cout << "3. Balance sheet from current month" << endl;

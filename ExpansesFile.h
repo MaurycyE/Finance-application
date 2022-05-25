@@ -5,6 +5,7 @@
 #include <vector>
 #include "Markup.h"
 #include "SupportMethods.h"
+#include "DateManager.h"
 
 using namespace std;
 
@@ -20,6 +21,7 @@ public:
     void lastExpansesIDSetter(int incomeIDtoSet);
     int lastExpansesIDgetter();
     string displayDateWithSeparationSign (int dateWithoutSeparationSigns);
+    bool isExpanseFileEmpty ();
 
 private:
 
