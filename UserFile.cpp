@@ -8,6 +8,15 @@ void UserFile::addUserToTheFile (User actualUser) {
 
     xml.Load(USER_FILE_NAME);
 
+    if (!xml.IsWellFormed()) {
+
+        xml.AddElem("USERS");
+        xml.Save(USER_FILE_NAME);
+
+    }
+
+    xml.FindElem("USERS");
+    xml.IntoElem();
     xml.AddElem("USER");
     xml.IntoElem();
     xml.AddElem("USER_ID", actualUser.userIdGetter());
@@ -25,8 +34,10 @@ vector <User> UserFile::loadUsersFromFile (vector <User> &users) {
     CMarkup xml;
     xml.Load(USER_FILE_NAME);
 
-    while (xml.FindElem("USER")) {
+    while (xml.FindChildElem("USER")) {
+
         User actualUser;
+    xml.IntoElem();
         xml.FindChildElem("USER_ID");
         actualUser.userIdSetter(SupportMethods::conversionStringToInt(xml.GetChildData()));
 
@@ -43,7 +54,7 @@ vector <User> UserFile::loadUsersFromFile (vector <User> &users) {
         actualUser.userPasswordSetter(xml.GetChildData());
 
         users.push_back(actualUser);
-
+        xml.OutOfElem();
     }
 
     return users;
@@ -55,7 +66,8 @@ void  UserFile::changePasswordInFile(int userID, string newPassword) {
     xml.Load(USER_FILE_NAME);
 
     while (true) {
-        xml.FindElem("USER");
+        xml.FindChildElem("USER");
+        xml.IntoElem();
         xml.FindChildElem("USER_ID");
         if (SupportMethods::conversionStringToInt(xml.GetChildData())==userID) {
             xml.FindChildElem("USER_PASSWORD");
@@ -66,6 +78,9 @@ void  UserFile::changePasswordInFile(int userID, string newPassword) {
             xml.Save(USER_FILE_NAME);
 
             break;
+
         }
+        xml.OutOfElem();
     }
+
 }
