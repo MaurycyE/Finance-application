@@ -31,8 +31,6 @@ void ExpansesManager::addExpanse() {
 
         cout<<"Enter date in format rrrr-mm-dd and from 2000-01-01 to last day of current month period: "<<endl;
         do {
-
-            //cout<<"Enter date in format rrrr-mm-dd and from 2000-01-01 to last day of current month period: "<<endl;
             userDate="";
             userDate=SupportMethods::loadTextLine();
             validationCheck = checkUserDate.isGivenDateVaild(userDate);
@@ -205,7 +203,6 @@ int ExpansesManager::obtainMonthFromFullDate (int fullDate) {
 
         }
     }
-
     month=SupportMethods::conversionStringToInt(monthToConvertToInt);
 
     return month;

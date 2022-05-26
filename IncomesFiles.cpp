@@ -10,7 +10,6 @@ void IncomesFiles::addIncomesToTheFile (Incomes actualRecord) {
 
         xml.AddElem("INCOMES");
         xml.Save(USER_FILE_NAME);
-
     }
 
     xml.FindElem("INCOMES");
@@ -19,7 +18,6 @@ void IncomesFiles::addIncomesToTheFile (Incomes actualRecord) {
     xml.IntoElem();
     xml.AddElem("INCOME_ID", actualRecord.incomeIDgetter());
     xml.AddElem("USER_ID", actualRecord.userIdGetter());
-    //xml.AddElem("INCOME_ID", actualRecord.incomeIDgetter());
     xml.AddElem("INCOME_AMOUT", SupportMethods::conversionFloatToString(actualRecord.incomeAmoutGetter()));
     xml.AddElem("DATE", addDateToFileWithSeparationSign(actualRecord.fullDateGetter()));
     xml.AddElem("DESCRIPTION", actualRecord.descriptionGetter());
@@ -54,72 +52,36 @@ string IncomesFiles::addDateToFileWithSeparationSign (int dateWithoutSeparationS
 vector<Incomes> IncomesFiles::loadLoggedUserIncomes(vector<Incomes> incomes, int loggedUserId) {
 
     CMarkup xml;
-    //cout<<xml.IsWellFormed()<<endl;
-    //getchar();
     xml.Load(USER_FILE_NAME);
-
-    //cout<<isIncomeFileEmpty()<<endl;
-   //getchar();
 
     while (xml.FindChildElem("INCOME")) {
 
-            Incomes actualRecord;
+        Incomes actualRecord;
 
         xml.IntoElem();
-
         xml.FindChildElem("INCOME_ID");
-            actualRecord.incomeIDsetter(SupportMethods::conversionStringToInt(xml.GetChildData()));
-            //lasIncomeIDSetter(SupportMethods::conversionStringToInt(xml.GetChildData()));
-            lasIncomeIDSetter(actualRecord.incomeIDgetter());
-           // cout<<lastIncomeIDgetter()<<endl;
+        actualRecord.incomeIDsetter(SupportMethods::conversionStringToInt(xml.GetChildData()));
+        lasIncomeIDSetter(actualRecord.incomeIDgetter());
 
-            //getchar();
-
-            //system("pause");
-
-            xml.FindChildElem("USER_ID");
+        xml.FindChildElem("USER_ID");
         if (SupportMethods::conversionStringToInt(xml.GetChildData())==loggedUserId) {
 
-            //Incomes actualRecord;
-
-            //actualRecord.userIdSetter(SupportMethods::conversionStringToInt(xml.GetChildData()));
-
-            //xml.FindChildElem("INCOME_ID");
-            //actualRecord.incomeIDsetter(SupportMethods::conversionStringToInt(xml.GetChildData()));
-            //lasIncomeIDSetter(SupportMethods::conversionStringToInt(xml.GetChildData()));
-
-                    //xml.FindChildElem("USER_ID");
-        actualRecord.userIdSetter(SupportMethods::conversionStringToInt(xml.GetChildData()));
-
-
+            actualRecord.userIdSetter(SupportMethods::conversionStringToInt(xml.GetChildData()));
 
             xml.FindChildElem("INCOME_AMOUT");
             actualRecord.incomeAmoutSetter(SupportMethods::conversionStringToFloat(xml.GetChildData()));
 
             xml.FindChildElem("DATE");
 
-//            DateManager gateFullDate;
-//                DatesAndFinances dateToSave;
-//                dateToSave=gateFullDate.obtainYearMonthAndDayFromFullDate(xml.GetChildData());
-//
-//                actualRecord.fullDateSetter(dateToSave.fullDateGetter());
             DateManager gateFullDate;
-                DatesAndFinances dateToSave;
-                dateToSave=gateFullDate.obtainYearMonthAndDayFromFullDate(xml.GetChildData());
-                actualRecord.fullDateSetter(dateToSave.fullDateGetter());
-
-            //actualRecord.fullDateSetter(SupportMethods::conversionStringToInt(xml.GetChildData()));
-
-
-
-           // cout<<actualRecord.fullDateGetter()<<endl;
-          //      getchar();
+            DatesAndFinances dateToSave;
+            dateToSave=gateFullDate.obtainYearMonthAndDayFromFullDate(xml.GetChildData());
+            actualRecord.fullDateSetter(dateToSave.fullDateGetter());
 
             xml.FindChildElem("DESCRIPTION");
             actualRecord.descriptionSetter(xml.GetChildData());
 
             incomes.push_back(actualRecord);
-
         }
         xml.OutOfElem();
     }
@@ -142,13 +104,12 @@ bool IncomesFiles::isIncomeFileEmpty () {
     CMarkup xml;
     xml.Load(USER_FILE_NAME);
 
-    if (xml.FindElem("INCOMES")&&(xml.FindChildElem("INCOME"))){
+    if (xml.FindElem("INCOMES")&&(xml.FindChildElem("INCOME"))) {
 
-    //xml.FindElem("INCOME");
         return true;
     }
 
-        else
-            return false;
+    else
+        return false;
 
 }

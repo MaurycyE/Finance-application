@@ -19,7 +19,6 @@ void IncomesManager::addIncome() {
     }
     if (userAnswer=='y') {
         DateManager giveActualDate;
-        //actualRecord.fullDateSetter(giveActualDate.giveActualDate('1'));
         actualRecord.fullDateSetter(SupportMethods::conversionStringToInt(giveActualDate.giveActualDate('2')));
     }
 
@@ -29,8 +28,6 @@ void IncomesManager::addIncome() {
         bool validationCheck;
         cout<<"Enter date in format rrrr-mm-dd and from 2000-01-01 to last day of current month period: "<<endl;
         do {
-
-            //cout<<"Enter date in format rrrr-mm-dd and from 2000-01-01 to last day of current month period: "<<endl;
             userDate="";
             userDate=SupportMethods::loadTextLine();
             validationCheck = checkUserDate.isGivenDateVaild(userDate);
@@ -45,7 +42,6 @@ void IncomesManager::addIncome() {
                 dateToSave=gateFullDate.obtainYearMonthAndDayFromFullDate(userDate);
 
                 actualRecord.fullDateSetter(dateToSave.fullDateGetter());
-
             }
 
         } while (!validationCheck);
@@ -84,8 +80,7 @@ void IncomesManager::loadIncomeRecords () {
 
 int IncomesManager::loadLastIncomeId () {
 
-    //if (incomes.empty())
-        if (!incomesFile.isIncomeFileEmpty())
+    if (!incomesFile.isIncomeFileEmpty())
         lastIncomeID=0;
 
     else {
@@ -119,9 +114,7 @@ void IncomesManager::displayAllIncomesFromCurrentOrPreviousMonth(int currentOrPr
             incomesToDisplayFromSelectedPeriod.push_back(incomeRecordToDisplay);
 
             totalIncome+=it->Incomes::incomeAmoutGetter();
-
         }
-
     }
 
     sort(incomesToDisplayFromSelectedPeriod.begin(), incomesToDisplayFromSelectedPeriod.end(), []( Incomes &incomeCompared,  Incomes &incomeToCompare) {
@@ -163,7 +156,6 @@ void IncomesManager::displayAllIncomesFromSelectedPeriodOfTime() {
             DateManager gateFullDate;
             DatesAndFinances dateToSave;
             dateToSave=gateFullDate.obtainYearMonthAndDayFromFullDate(firstUserDate);
-
             firstUserDateConvertedToInt=dateToSave.fullDateGetter();
 
         }
@@ -185,7 +177,6 @@ void IncomesManager::displayAllIncomesFromSelectedPeriodOfTime() {
             DateManager getFullDate;
             DatesAndFinances dateToSave;
             dateToSave=getFullDate.obtainYearMonthAndDayFromFullDate(secondUserDate);
-
             secondUserDateConvertedToInt=dateToSave.fullDateGetter();
 
         }

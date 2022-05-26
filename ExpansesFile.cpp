@@ -5,19 +5,18 @@ void ExpansesFile::addExpansesToTheFile (Expanses actualRecord) {
     CMarkup xml;
     xml.Load(USER_FILE_NAME);
 
-      if (!xml.IsWellFormed()) {
+    if (!xml.IsWellFormed()) {
 
         xml.AddElem("EXPANSES");
         xml.Save(USER_FILE_NAME);
 
     }
-xml.FindElem("EXPANSES");
+    xml.FindElem("EXPANSES");
     xml.IntoElem();
     xml.AddElem("EXPANSE");
     xml.IntoElem();
     xml.AddElem("EXPANSE_ID", actualRecord.expanseIDgetter());
     xml.AddElem("USER_ID", actualRecord.userIdGetter());
-    //xml.AddElem("EXPANSE_ID", actualRecord.expanseIDgetter());
     xml.AddElem("EXPANSE_AMOUT", SupportMethods::conversionFloatToString(actualRecord.expanseAmoutGetter()));
     xml.AddElem("DATE", displayDateWithSeparationSign(actualRecord.fullDateGetter()));
     xml.AddElem("DESCRIPTION", actualRecord.descriptionGetter());
@@ -54,38 +53,27 @@ vector<Expanses> ExpansesFile::loadLoggedUserExpanses(vector<Expanses> expanses,
     xml.Load(USER_FILE_NAME);
 
     while (xml.FindChildElem("EXPANSE")) {
-            Expanses actualRecord;
-            xml.IntoElem();
-    //actualRecord.userIdSetter(SupportMethods::conversionStringToInt(xml.GetChildData()));
+        Expanses actualRecord;
+        xml.IntoElem();
 
-    xml.FindChildElem("EXPANSE_ID");
-            actualRecord.expanseIDsetter(SupportMethods::conversionStringToInt(xml.GetChildData()));
-            lastExpansesIDSetter(actualRecord.expanseIDgetter());
-
+        xml.FindChildElem("EXPANSE_ID");
+        actualRecord.expanseIDsetter(SupportMethods::conversionStringToInt(xml.GetChildData()));
+        lastExpansesIDSetter(actualRecord.expanseIDgetter());
 
         xml.FindChildElem("USER_ID");
         if (SupportMethods::conversionStringToInt(xml.GetChildData())==loggedUserId) {
 
-        //xml.FindChildElem("USER_ID");
-         actualRecord.userIdSetter(SupportMethods::conversionStringToInt(xml.GetChildData()));
-
-           // Expanses actualRecord;
-            //actualRecord.userIdSetter(SupportMethods::conversionStringToInt(xml.GetChildData()));
-
-            //xml.FindChildElem("EXPANSE_ID");
-           // actualRecord.expanseIDsetter(SupportMethods::conversionStringToInt(xml.GetChildData()));
-           // lastExpansesIDSetter(SupportMethods::conversionStringToInt(xml.GetChildData()));
+            actualRecord.userIdSetter(SupportMethods::conversionStringToInt(xml.GetChildData()));
 
             xml.FindChildElem("EXPANSE_AMOUT");
             actualRecord.expanseAmoutSetter(SupportMethods::conversionStringToFloat(xml.GetChildData()));
 
             xml.FindChildElem("DATE");
-            //actualRecord.fullDateSetter(SupportMethods::conversionStringToInt(xml.GetChildData()));
-            DateManager gateFullDate;
-                DatesAndFinances dateToSave;
-                dateToSave=gateFullDate.obtainYearMonthAndDayFromFullDate(xml.GetChildData());
-                actualRecord.fullDateSetter(dateToSave.fullDateGetter());
 
+            DateManager gateFullDate;
+            DatesAndFinances dateToSave;
+            dateToSave=gateFullDate.obtainYearMonthAndDayFromFullDate(xml.GetChildData());
+            actualRecord.fullDateSetter(dateToSave.fullDateGetter());
 
             xml.FindChildElem("DESCRIPTION");
             actualRecord.descriptionSetter(xml.GetChildData());
@@ -114,13 +102,12 @@ bool ExpansesFile::isExpanseFileEmpty () {
     CMarkup xml;
     xml.Load(USER_FILE_NAME);
 
-    if (xml.FindElem("EXPANSES")&&(xml.FindChildElem("EXPANSE"))){
+    if (xml.FindElem("EXPANSES")&&(xml.FindChildElem("EXPANSE"))) {
 
-    //xml.FindElem("INCOME");
         return true;
     }
 
-        else
-            return false;
+    else
+        return false;
 
 }
