@@ -31,6 +31,7 @@
 *.out
 *.app
 
+# code blocks files
 *.xml
 *.depend
 *.layout
